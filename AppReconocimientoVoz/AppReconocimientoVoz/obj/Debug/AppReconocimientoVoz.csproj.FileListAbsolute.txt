@@ -1,0 +1,10 @@
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe.config
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.pdb
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Form1.resources
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Properties.Resources.resources
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe
+C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.pdb
