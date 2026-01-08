@@ -73,32 +73,30 @@ namespace AppReconocimientoVoz
             {
                 lblComando.Text = e.Result.Text;
 
-                switch (e.Result.Text)
-                {
-                    case "cambiar color rojo":
-                        this.BackColor = Color.LightCoral;
-                        break;
-
-                    case "cambiar color azul":
-                        this.BackColor = Color.LightBlue;
-                        break;
-
-                    case "limpiar texto":
-                        lblComando.Text = string.Empty;
-                        break;
-
-                    case "ocultar texto":
-                        lblComando.Visible = false;
-                        break;
-
-                    case "mostrar texto":
-                        lblComando.Visible = true;
-                        break;
-
-                    case "salir":
-                        Application.Exit();
-                        break;
-                }
+                 if (e.Result.Text == "cambiar color rojo")
+                 {
+                     this.BackColor = Color.LightCoral;
+                 }
+                 else if (e.Result.Text == "cambiar color azul")
+                 {
+                     this.BackColor = Color.LightBlue;
+                 }
+                 else if (e.Result.Text == "limpiar texto")
+                 {
+                     lblComando.Text = string.Empty;
+                 }
+                 else if (e.Result.Text == "ocultar texto")
+                 {
+                     lblComando.Visible = false;
+                 }
+                 else if (e.Result.Text == "mostrar texto")
+                 {
+                     lblComando.Visible = true;
+                 }
+                 else if (e.Result.Text == "salir")
+                 {
+                     Application.Exit();
+                 }
             }));
         }
 
