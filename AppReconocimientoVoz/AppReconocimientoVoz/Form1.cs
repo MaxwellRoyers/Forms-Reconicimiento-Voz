@@ -37,8 +37,7 @@ namespace AppReconocimientoVoz
                 "salir"
             );
 
-            GrammarBuilder gb = new GrammarBuilder(comandos);
-            Grammar grammar = new Grammar(gb);
+            Grammar grammar = new Grammar(comandos);
             recognizer.LoadGrammar(grammar);
 
             recognizer.SpeechRecognized += Reconocido;
@@ -66,7 +65,7 @@ namespace AppReconocimientoVoz
 
         private void Reconocido(object sender, SpeechRecognizedEventArgs e)
         {
-            if (e.Result.Confidence < 0.60)
+            if (e.Result.Confidence < 0.40)
                 return;
 
             Invoke(new Action(() =>
@@ -75,11 +74,11 @@ namespace AppReconocimientoVoz
 
                  if (e.Result.Text == "cambiar color rojo")
                  {
-                     this.BackColor = Color.LightCoral;
+                     this.BackColor = Color.Red;
                  }
                  else if (e.Result.Text == "cambiar color azul")
                  {
-                     this.BackColor = Color.LightBlue;
+                     this.BackColor = Color.Blue;
                  }
                  else if (e.Result.Text == "limpiar texto")
                  {
