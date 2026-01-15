@@ -41,7 +41,7 @@ namespace AppReconocimientoVoz
 
             // Lista de comandos incluyendo "hey reco" y "ver historial de comandos"
             Choices comandos = new Choices(
-                "hey reco",
+                "hola reco",
                 "cambiar color rojo",
                 "cambiar color azul",
                 "limpiar texto",
@@ -94,61 +94,49 @@ namespace AppReconocimientoVoz
 
                 lblComando.Text = comando;
 
-                // 1️⃣ Si no está activado, solo activamos con "hey google"
+                //Si no está activado, solo activamos con "hola reco"
                 if (!activado)
                 {
-                    if (comando == "hey reco")
+                    if (comando == "hola reco")
                     {
                         activado = true;
                         ActualizarEstado("Activado, esperando comando...");
-                    }
-                    return; // Ignorar otros comandos hasta que diga “hey google”
-                }
-
-                // 2️⃣ Ya activado → ejecutar comando y reiniciar activación
-                switch (comando)
-                {
-                    case "cambiar color rojo":
+                        if (e.Result.Text == "cambiar color rojo")
+                        {
                         this.BackColor = Color.Red;
-                        break;
-
-                    case "cambiar color azul":
-                        this.BackColor = Color.Blue;
-                        break;
-
-                    case "limpiar texto":
-                        lblComando.Text = string.Empty;
-                        break;
-
-                    case "ocultar texto":
-                        lblComando.Visible = false;
-                        break;
-
-                    case "mostrar texto":
-                        lblComando.Visible = true;
-                        break;
-
-                    case "ver historial de comandos":
-                        MessageBox.Show(
-                            string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()),
-                            "Historial de Comandos"
-                        );
-                        break;
-
-                    case "abrir dictado":
-                        FormDictado fd = new FormDictado();
-                        fd.Show();
-                        break;
-
-                    case "salir":
-                        Application.Exit();
-                        break;
-
-                    default:
-                        // Comando no reconocido
-                        break;
+                        }
+                        else if (e.Result.Text == "cambiar color azul")
+                        {
+                            this.BackColor = Color.Blue;
+                        }
+                        else if (e.Result.Text == "limpiar texto")
+                        {
+                            lblComando.Text = string.Empty;
+                        }
+                        else if (e.Result.Text == "ocultar texto")
+                        {
+                            lblComando.Visible = false;
+                        }
+                        else if (e.Result.Text == "mostrar texto")
+                        {
+                            lblComando.Visible = true;
+                        }
+                        else if (e.Result.Text == "ver historial de comandos")
+                        {
+                            MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
+                        }
+                        else if (e.Result.Text == "abrir dictado")
+                        {
+                            FormDictado fd = new FormDictado();
+                            fd.Show();
+                        }
+                        else if (e.Result.Text == "salir")
+                        {
+                           Application.Exit();
+                        }
+                    }
+                    return; // Ignorar otros comandos hasta que diga “hola reco”
                 }
-
                 // 3️⃣ Reiniciar activación
                 activado = false;
                 ActualizarEstado("Escuchando...");
