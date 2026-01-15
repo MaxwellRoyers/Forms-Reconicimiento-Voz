@@ -16,7 +16,7 @@ namespace AppReconocimientoVoz
     {
         private SpeechRecognitionEngine recognizer;
         private bool escuchando = false;
-        private bool activado = false; // Para “Hey reco”
+        private bool activado = false; // Para “reco”
 
         public Form1()
         {
@@ -39,9 +39,9 @@ namespace AppReconocimientoVoz
                 return;
             }
 
-            // Lista de comandos incluyendo "hey reco" y "ver historial de comandos"
+            // Lista de comandos incluyendo
             Choices comandos = new Choices(
-                "hola reco",
+                "reco",
                 "cambiar color rojo",
                 "cambiar color azul",
                 "limpiar texto",
@@ -94,50 +94,56 @@ namespace AppReconocimientoVoz
 
                 lblComando.Text = comando;
 
-                //Si no está activado, solo activamos con "hola reco"
+                //Si no está activado, solo activamos con "reco"
                 if (!activado)
                 {
                     if (comando == "hola reco")
                     {
                         activado = true;
                         ActualizarEstado("Activado, esperando comando...");
-                        if (e.Result.Text == "cambiar color rojo")
-                        {
-                        this.BackColor = Color.Red;
-                        }
-                        else if (e.Result.Text == "cambiar color azul")
-                        {
-                            this.BackColor = Color.Blue;
-                        }
-                        else if (e.Result.Text == "limpiar texto")
-                        {
-                            lblComando.Text = string.Empty;
-                        }
-                        else if (e.Result.Text == "ocultar texto")
-                        {
-                            lblComando.Visible = false;
-                        }
-                        else if (e.Result.Text == "mostrar texto")
-                        {
-                            lblComando.Visible = true;
-                        }
-                        else if (e.Result.Text == "ver historial de comandos")
-                        {
-                            MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
-                        }
-                        else if (e.Result.Text == "abrir dictado")
-                        {
-                            FormDictado fd = new FormDictado();
-                            fd.Show();
-                        }
-                        else if (e.Result.Text == "salir")
-                        {
-                           Application.Exit();
-                        }
+                        lblComando.Text = comando;
                     }
                     return; // Ignorar otros comandos hasta que diga “hola reco”
+                    if (e.Result.Text.ToLower() == "cambiar color rojo")
+                    {
+                        this.BackColor = Color.Red;
+                        lblComando.Text = comando;
+                    }
+                    else if (e.Result.Text.ToLower() == "cambiar color azul")
+                    {
+                        this.BackColor = Color.Blue;
+                        lblComando.Text = comando;
+                    }
+                    else if (e.Result.Text.ToLower() == "limpiar texto")
+                    {
+                        lblComando.Text = string.Empty;
+                    }
+                    else if (e.Result.Text.ToLower() == "ocultar texto")
+                    {
+                        lblComando.Visible = false;
+                    }
+                    else if (e.Result.Text.ToLower() == "mostrar texto")
+                    {
+                        lblComando.Visible = true;
+                        lblComando.Text = comando;
+                    }
+                    else if (e.Result.Text.ToLower() == "ver historial de comandos")
+                    {
+                        MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
+                        lblComando.Text = comando;
+                    }
+                    else if (e.Result.Text.ToLower() == "abrir dictado")
+                    {
+                        FormDictado fd = new FormDictado();
+                        fd.Show();
+                        lblComando.Text = comando;
+                    }
+                    else if (e.Result.Text.ToLower() == "salir")
+                    {
+                        Application.Exit();
+                    }
                 }
-                // 3️⃣ Reiniciar activación
+                //Reiniciar activación
                 activado = false;
                 ActualizarEstado("Escuchando...");
             }));
