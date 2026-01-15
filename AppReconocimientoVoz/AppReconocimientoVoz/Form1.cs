@@ -34,15 +34,16 @@ namespace AppReconocimientoVoz
                 "limpiar texto",
                 "ocultar texto",
                 "mostrar texto",
+                "ver historial de comandos",
                 "salir"
             );
 
-            GrammarBuilder gb = new GrammarBuilder(comandos);
-            Grammar grammar = new Grammar(gb);
+            Grammar grammar = new Grammar(comandos);
             recognizer.LoadGrammar(grammar);
 
             recognizer.SpeechRecognized += Reconocido;
             recognizer.RecognizeCompleted += (s, e) => escuchando = false;
+            lstHistorial.Visible = false;
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -71,15 +72,19 @@ namespace AppReconocimientoVoz
 
             Invoke(new Action(() =>
             {
+                string comando = e.Result.Text;
+                string hora = DateTime.Now.ToString("HH:mm:ss");
+                lstHistorial.Items.Insert(0, $"{hora} - {comando}");
+
                 lblComando.Text = e.Result.Text;
 
                  if (e.Result.Text == "cambiar color rojo")
                  {
-                     this.BackColor = Color.LightCoral;
+                     this.BackColor = Color.Red;
                  }
                  else if (e.Result.Text == "cambiar color azul")
                  {
-                     this.BackColor = Color.LightBlue;
+                     this.BackColor = Color.Blue;
                  }
                  else if (e.Result.Text == "limpiar texto")
                  {
@@ -92,6 +97,10 @@ namespace AppReconocimientoVoz
                  else if (e.Result.Text == "mostrar texto")
                  {
                      lblComando.Visible = true;
+                 }
+                 else if (e.Result.Text == "ver historial de comandos")
+                 {
+                    MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
                  }
                  else if (e.Result.Text == "salir")
                  {

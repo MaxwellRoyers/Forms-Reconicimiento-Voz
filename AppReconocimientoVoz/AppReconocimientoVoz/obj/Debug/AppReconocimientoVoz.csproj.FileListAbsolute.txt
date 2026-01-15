@@ -8,3 +8,14 @@ C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\App
 C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe
 C:\Users\Usuario\source\repos\Forms-Reconicimiento-Voz2\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.pdb
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe.config
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.pdb
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.AssemblyReference.cache
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe.config
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Form1.resources
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Properties.Resources.resources
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.GenerateResource.cache
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.CoreCompileInputs.cache
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe
+C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.pdb
