@@ -40,10 +40,9 @@ namespace AppReconocimientoVoz
             DictationGrammar dictado = new DictationGrammar();
             recognizer.LoadGrammar(dictado);
 
-            // Agregar comando de cierre "hey reco volver"
-            Choices comandosVoz = new Choices("hey reco volver");
-            GrammarBuilder gb = new GrammarBuilder(comandosVoz);
-            Grammar g = new Grammar(gb);
+            // Agregar comando de cierre "reco vuelve"
+            Choices comandosVoz = new Choices("reco vuelve");
+            Grammar g = new Grammar(comandosVoz);
             recognizer.LoadGrammar(g);
 
             recognizer.SpeechRecognized += DictadoReconocido;
@@ -52,13 +51,13 @@ namespace AppReconocimientoVoz
 
         private void DictadoReconocido(object sender, SpeechRecognizedEventArgs e)
         {
-            if (e.Result.Confidence < 0.40)
+            if (e.Result.Confidence < 0.70)
                 return;
 
             string texto = e.Result.Text.ToLower();
 
             // Comando para cerrar el formulario
-            if (texto == "hey reco volver")
+            if (texto == "reco vuelve")
             {
                 recognizer?.RecognizeAsyncStop();
                 this.Close();
