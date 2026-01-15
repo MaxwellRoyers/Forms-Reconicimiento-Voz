@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|c:\\users\\oriol\\documents\\github\\forms-reconicimiento-voz2\\appreconocimientovoz\\appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|c:\\users\\oriol\\documents\\github\\forms-reconicimiento-voz2\\appreconocimientovoz\\appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\appreconocimientovoz\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|c:\\users\\oriol\\documents\\github\\forms-reconicimiento-voz2\\appreconocimientovoz\\appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\formdictado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|c:\\users\\oriol\\documents\\github\\forms-reconicimiento-voz2\\appreconocimientovoz\\appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{013F070F-4D97-458B-884A-342B5FE63FE2}|AppReconocimientoVoz\\AppReconocimientoVoz.csproj|solutionrelative:appreconocimientovoz\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,53 +50,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormDictado.cs",
-              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
-              "RelativeDocumentMoniker": "AppReconocimientoVoz\\FormDictado.cs",
-              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
-              "RelativeToolTip": "AppReconocimientoVoz\\FormDictado.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T16:30:05.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormDictado.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
-              "RelativeDocumentMoniker": "AppReconocimientoVoz\\FormDictado.cs",
-              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AppReconocimientoVoz\\FormDictado.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T16:29:48.905Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\Form1.cs",
-              "RelativeDocumentMoniker": "AppReconocimientoVoz\\Form1.cs",
-              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\Form1.cs",
-              "RelativeToolTip": "AppReconocimientoVoz\\Form1.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAowIgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T23:48:11.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\Form1.cs",
               "RelativeDocumentMoniker": "AppReconocimientoVoz\\Form1.cs",
               "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "AppReconocimientoVoz\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T16:21:25.321Z",
+              "WhenOpened": "2026-01-15T18:13:35.55Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormDictado.cs",
+              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
+              "RelativeDocumentMoniker": "AppReconocimientoVoz\\FormDictado.cs",
+              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
+              "RelativeToolTip": "AppReconocimientoVoz\\FormDictado.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T16:30:05.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormDictado.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs",
+              "RelativeDocumentMoniker": "AppReconocimientoVoz\\FormDictado.cs",
+              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormDictado.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AppReconocimientoVoz\\FormDictado.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T16:29:48.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "AppReconocimientoVoz\\FormPrincipal.cs",
+              "ToolTip": "C:\\Users\\Oriol\\Documents\\GitHub\\Forms-Reconicimiento-Voz2\\AppReconocimientoVoz\\AppReconocimientoVoz\\FormPrincipal.cs",
+              "RelativeToolTip": "AppReconocimientoVoz\\FormPrincipal.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAowI8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T23:48:11.143Z"
             }
           ]
         },
