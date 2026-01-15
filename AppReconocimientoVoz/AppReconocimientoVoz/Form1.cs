@@ -92,8 +92,6 @@ namespace AppReconocimientoVoz
                 string hora = DateTime.Now.ToString("HH:mm:ss");
                 lstHistorial.Items.Insert(0, $"{hora} - {comando}");
 
-                lblComando.Text = comando;
-
                 //Si no está activado, solo activamos con "reco"
                 if (!activado)
                 {
