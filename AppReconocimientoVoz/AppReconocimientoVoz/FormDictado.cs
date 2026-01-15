@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace AppReconocimientoVoz
 {
-    public partial class FormDictado : Form
+        public partial class FormDictado : Form
     {
         private SpeechRecognitionEngine recognizer;
 
@@ -40,6 +40,12 @@ namespace AppReconocimientoVoz
             DictationGrammar dictado = new DictationGrammar();
             recognizer.LoadGrammar(dictado);
 
+            // Agregar comando de cierre "hey reco volver"
+            Choices comandosVoz = new Choices("hey reco volver");
+            GrammarBuilder gb = new GrammarBuilder(comandosVoz);
+            Grammar g = new Grammar(gb);
+            recognizer.LoadGrammar(g);
+
             recognizer.SpeechRecognized += DictadoReconocido;
             recognizer.RecognizeAsync(RecognizeMode.Multiple);
         }
@@ -49,6 +55,17 @@ namespace AppReconocimientoVoz
             if (e.Result.Confidence < 0.40)
                 return;
 
+            string texto = e.Result.Text.ToLower();
+
+            // Comando para cerrar el formulario
+            if (texto == "hey reco volver")
+            {
+                recognizer?.RecognizeAsyncStop();
+                this.Close();
+                return;
+            }
+
+            // Dictado normal
             Invoke(new Action(() =>
             {
                 txtDictado.AppendText(e.Result.Text + " ");
