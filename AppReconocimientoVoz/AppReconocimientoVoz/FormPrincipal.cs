@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace AppReconocimientoVoz
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
         private SpeechRecognitionEngine recognizer;
         private bool escuchando = false;
         private bool activado = false; // Para “reco”
 
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
             InicializarReconocimiento();
@@ -141,7 +141,7 @@ namespace AppReconocimientoVoz
                 }
                 else if (e.Result.Text.ToLower() == "salir")
                 {
-                    this.close();
+                    this.Close();
                 }
                 //Reiniciar activación
                 activado = false;

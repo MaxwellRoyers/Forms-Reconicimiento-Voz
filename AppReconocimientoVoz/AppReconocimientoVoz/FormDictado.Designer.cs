@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDictado = new System.Windows.Forms.TextBox();
             this.lblDictado = new System.Windows.Forms.Label();
+            this.txtDictado = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // txtDictado
-            // 
-            this.txtDictado.Location = new System.Drawing.Point(91, 148);
-            this.txtDictado.Name = "txtDictado";
-            this.txtDictado.Size = new System.Drawing.Size(591, 20);
-            this.txtDictado.TabIndex = 0;
             // 
             // lblDictado
             // 
@@ -49,13 +42,21 @@
             this.lblDictado.TabIndex = 1;
             this.lblDictado.Text = "Dictado";
             // 
+            // txtDictado
+            // 
+            this.txtDictado.Location = new System.Drawing.Point(40, 169);
+            this.txtDictado.Name = "txtDictado";
+            this.txtDictado.Size = new System.Drawing.Size(717, 255);
+            this.txtDictado.TabIndex = 2;
+            this.txtDictado.Text = "";
+            // 
             // FormDictado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblDictado);
             this.Controls.Add(this.txtDictado);
+            this.Controls.Add(this.lblDictado);
             this.Name = "FormDictado";
             this.Text = "FormDictado";
             this.ResumeLayout(false);
@@ -64,8 +65,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtDictado;
         private System.Windows.Forms.Label lblDictado;
+        private System.Windows.Forms.RichTextBox txtDictado;
     }
 }
