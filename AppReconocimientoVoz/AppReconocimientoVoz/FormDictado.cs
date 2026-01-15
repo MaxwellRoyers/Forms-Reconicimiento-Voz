@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Speech.Recognition;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppReconocimientoVoz
 {
-        public partial class FormDictado : Form
+    public partial class FormDictado : Form
     {
         private SpeechRecognitionEngine recognizer;
+        private string textoAcumulado = ""; // Guarda todo el dictado
 
         public FormDictado()
         {
@@ -33,48 +27,68 @@ namespace AppReconocimientoVoz
             catch
             {
                 MessageBox.Show("No se detectó micrófono.");
+                Close();
                 return;
             }
 
-            // Gramática de dictado libre
-            DictationGrammar dictado = new DictationGrammar();
-            recognizer.LoadGrammar(dictado);
+            // SOLO dictado libre
+            recognizer.UnloadAllGrammars();
+            recognizer.LoadGrammar(new DictationGrammar());
 
-            // Agregar comando de cierre "reco vuelve"
-            Choices comandosVoz = new Choices("reco vuelve");
-            Grammar g = new Grammar(comandosVoz);
-            recognizer.LoadGrammar(g);
+            // Configurar timeouts para frases más cortas
+            recognizer.EndSilenceTimeout = TimeSpan.FromMilliseconds(300);
+            recognizer.EndSilenceTimeoutAmbiguous = TimeSpan.FromMilliseconds(500);
 
+            // Eventos
             recognizer.SpeechRecognized += DictadoReconocido;
+            recognizer.SpeechHypothesized += DictadoHipotetico; // texto parcial en txtDictado
+
+            // Iniciar reconocimiento
             recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            ActualizarEstado("Escuchando...");
         }
 
+        // Cuando se confirma el dictado (frase completa)
         private void DictadoReconocido(object sender, SpeechRecognizedEventArgs e)
         {
-            if (e.Result.Confidence < 0.70)
+            if (e.Result.Confidence < 0.40)
                 return;
 
-            string texto = e.Result.Text.ToLower();
-
-            // Comando para cerrar el formulario
-            if (texto == "reco vuelve")
-            {
-                recognizer?.RecognizeAsyncStop();
-                this.Close();
-                return;
-            }
-
-            // Dictado normal
             Invoke(new Action(() =>
             {
-                txtDictado.AppendText(e.Result.Text + " ");
+                textoAcumulado += e.Result.Text + " ";
+                txtDictado.Text = textoAcumulado;
+                txtDictado.SelectionStart = txtDictado.Text.Length; // mantener scroll al final
+                ActualizarEstado("Escuchando...");
+            }));
+        }
+
+        // Mientras hablas, muestra texto parcial en txtDictado
+        private void DictadoHipotetico(object sender, SpeechHypothesizedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                txtDictado.Text = textoAcumulado + e.Result.Text; // parcial + acumulado
+                txtDictado.SelectionStart = txtDictado.Text.Length; // scroll al final
             }));
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            recognizer?.RecognizeAsyncStop();
+            try
+            {
+                ActualizarEstado("Cerrando...");
+                recognizer?.RecognizeAsyncCancel();
+                recognizer?.Dispose();
+            }
+            catch { }
+
             base.OnFormClosing(e);
+        }
+
+        private void ActualizarEstado(string texto)
+        {
+            lblEscuchando.Text = texto;
         }
     }
 }

@@ -23,6 +23,8 @@ namespace AppReconocimientoVoz
             InitializeComponent();
             InicializarReconocimiento();
             ActualizarEstado("Inactivo");
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
         }
 
         private void InicializarReconocimiento()
@@ -131,9 +133,19 @@ namespace AppReconocimientoVoz
                     MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
                     lblComando.Text = comando;
                 }
-                else if (e.Result.Text.ToLower() == "abrir dictado")
+                else if (comando == "abrir dictado")
                 {
+                    recognizer.RecognizeAsyncStop();
+                    escuchando = false;
+
                     FormDictado fd = new FormDictado();
+                    fd.FormClosed += (s, args) =>
+                    {
+                        recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                        escuchando = true;
+                        ActualizarEstado("Escuchando...");
+                    };
+
                     fd.Show();
                     lblComando.Text = comando;
                 }

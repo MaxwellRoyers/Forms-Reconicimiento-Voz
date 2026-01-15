@@ -19,3 +19,15 @@ C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppRec
 C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.CoreCompileInputs.cache
 C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe
 C:\Users\migue\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.pdb
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe.config
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.exe
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\bin\Debug\AppReconocimientoVoz.pdb
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.AssemblyReference.cache
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe.config
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Form1.resources
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.FormDictado.resources
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.Properties.Resources.resources
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.GenerateResource.cache
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.csproj.CoreCompileInputs.cache
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.exe
+C:\Users\oriol\Source\Repos\Forms-Reconicimiento-Voz\AppReconocimientoVoz\AppReconocimientoVoz\obj\Debug\AppReconocimientoVoz.pdb
