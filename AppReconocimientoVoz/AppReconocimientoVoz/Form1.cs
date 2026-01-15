@@ -16,6 +16,7 @@ namespace AppReconocimientoVoz
     {
         private SpeechRecognitionEngine recognizer;
         private bool escuchando = false;
+        private bool activado = false; // Para “Hey reco”
 
         public Form1()
         {
@@ -23,18 +24,31 @@ namespace AppReconocimientoVoz
             InicializarReconocimiento();
             ActualizarEstado("Inactivo");
         }
+
         private void InicializarReconocimiento()
         {
             recognizer = new SpeechRecognitionEngine(new CultureInfo("es-ES"));
-            recognizer.SetInputToDefaultAudioDevice();
 
+            try
+            {
+                recognizer.SetInputToDefaultAudioDevice();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("No se detectó ningún micrófono.");
+                return;
+            }
+
+            // Lista de comandos incluyendo "hey reco" y "ver historial de comandos"
             Choices comandos = new Choices(
+                "hey reco",
                 "cambiar color rojo",
                 "cambiar color azul",
                 "limpiar texto",
                 "ocultar texto",
                 "mostrar texto",
                 "ver historial de comandos",
+                "abrir dictado",
                 "salir"
             );
 
@@ -43,6 +57,8 @@ namespace AppReconocimientoVoz
 
             recognizer.SpeechRecognized += Reconocido;
             recognizer.RecognizeCompleted += (s, e) => escuchando = false;
+
+            // Ocultar historial por defecto
             lstHistorial.Visible = false;
         }
 
@@ -72,40 +88,70 @@ namespace AppReconocimientoVoz
 
             Invoke(new Action(() =>
             {
-                string comando = e.Result.Text;
+                string comando = e.Result.Text.ToLower();
                 string hora = DateTime.Now.ToString("HH:mm:ss");
                 lstHistorial.Items.Insert(0, $"{hora} - {comando}");
 
-                lblComando.Text = e.Result.Text;
+                lblComando.Text = comando;
 
-                 if (e.Result.Text == "cambiar color rojo")
-                 {
-                     this.BackColor = Color.Red;
-                 }
-                 else if (e.Result.Text == "cambiar color azul")
-                 {
-                     this.BackColor = Color.Blue;
-                 }
-                 else if (e.Result.Text == "limpiar texto")
-                 {
-                     lblComando.Text = string.Empty;
-                 }
-                 else if (e.Result.Text == "ocultar texto")
-                 {
-                     lblComando.Visible = false;
-                 }
-                 else if (e.Result.Text == "mostrar texto")
-                 {
-                     lblComando.Visible = true;
-                 }
-                 else if (e.Result.Text == "ver historial de comandos")
-                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
-                 }
-                 else if (e.Result.Text == "salir")
-                 {
-                     Application.Exit();
-                 }
+                // 1️⃣ Si no está activado, solo activamos con "hey google"
+                if (!activado)
+                {
+                    if (comando == "hey reco")
+                    {
+                        activado = true;
+                        ActualizarEstado("Activado, esperando comando...");
+                    }
+                    return; // Ignorar otros comandos hasta que diga “hey google”
+                }
+
+                // 2️⃣ Ya activado → ejecutar comando y reiniciar activación
+                switch (comando)
+                {
+                    case "cambiar color rojo":
+                        this.BackColor = Color.Red;
+                        break;
+
+                    case "cambiar color azul":
+                        this.BackColor = Color.Blue;
+                        break;
+
+                    case "limpiar texto":
+                        lblComando.Text = string.Empty;
+                        break;
+
+                    case "ocultar texto":
+                        lblComando.Visible = false;
+                        break;
+
+                    case "mostrar texto":
+                        lblComando.Visible = true;
+                        break;
+
+                    case "ver historial de comandos":
+                        MessageBox.Show(
+                            string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()),
+                            "Historial de Comandos"
+                        );
+                        break;
+
+                    case "abrir dictado":
+                        FormDictado fd = new FormDictado();
+                        fd.Show();
+                        break;
+
+                    case "salir":
+                        Application.Exit();
+                        break;
+
+                    default:
+                        // Comando no reconocido
+                        break;
+                }
+
+                // 3️⃣ Reiniciar activación
+                activado = false;
+                ActualizarEstado("Escuchando...");
             }));
         }
 
@@ -113,6 +159,5 @@ namespace AppReconocimientoVoz
         {
             lblEscuchando.Text = texto;
         }
-    
     }
 }
