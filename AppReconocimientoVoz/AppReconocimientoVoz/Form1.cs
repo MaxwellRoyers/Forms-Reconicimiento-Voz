@@ -141,7 +141,7 @@ namespace AppReconocimientoVoz
                 }
                 else if (e.Result.Text.ToLower() == "salir")
                 {
-                    this.close();
+                    this.Close();
                 }
                 //Reiniciar activación
                 activado = false;
