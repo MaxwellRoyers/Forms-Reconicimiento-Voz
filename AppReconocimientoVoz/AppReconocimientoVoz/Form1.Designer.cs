@@ -1,6 +1,6 @@
 ﻿namespace AppReconocimientoVoz
 {
-    partial class FormPrincipal
+    partial class Form1
     {
         /// <summary>
         /// Variable del diseñador necesaria.
