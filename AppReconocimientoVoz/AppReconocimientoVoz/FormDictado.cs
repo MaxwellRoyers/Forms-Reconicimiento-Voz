@@ -30,6 +30,10 @@ namespace AppReconocimientoVoz
                 Close();
                 return;
             }
+            
+            Choices comandoVolver = new Choices("volver atrás");
+            Grammar grammar = new Grammar(comandoVolver);
+            recognizer.LoadGrammar(grammar);
 
             // SOLO dictado libre
             recognizer.UnloadAllGrammars();
@@ -51,8 +55,16 @@ namespace AppReconocimientoVoz
         // Cuando se confirma el dictado (frase completa)
         private void DictadoReconocido(object sender, SpeechRecognizedEventArgs e)
         {
-            if (e.Result.Confidence < 0.40)
+            if (e.Result.Confidence < 0.50)
                 return;
+
+            // Comando para cerrar el formulario
+            if (e.Result.Text.ToLower() == "volver atrás")
+            {
+                recognizer?.RecognizeAsyncStop();
+                this.Close();
+                return;
+            }
 
             Invoke(new Action(() =>
             {
