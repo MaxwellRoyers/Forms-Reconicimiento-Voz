@@ -23,6 +23,8 @@ namespace AppReconocimientoVoz
             InitializeComponent();
             InicializarReconocimiento();
             ActualizarEstado("Inactivo");
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
         }
 
         private void InicializarReconocimiento()
@@ -92,56 +94,64 @@ namespace AppReconocimientoVoz
                 string hora = DateTime.Now.ToString("HH:mm:ss");
                 lstHistorial.Items.Insert(0, $"{hora} - {comando}");
 
-                lblComando.Text = comando;
-
                 //Si no está activado, solo activamos con "reco"
                 if (!activado)
                 {
-                    if (comando == "hola reco")
+                    if (comando == "reco")
                     {
                         activado = true;
                         ActualizarEstado("Activado, esperando comando...");
-                        lblComando.Text = comando;
+                        lblComando.Text = comando + " te escucha";
                     }
                     return; // Ignorar otros comandos hasta que diga “hola reco”
-                    if (e.Result.Text.ToLower() == "cambiar color rojo")
+                }
+                if (e.Result.Text.ToLower() == "cambiar color rojo")
+                {
+                    this.BackColor = Color.Red;
+                    lblComando.Text = comando;
+                }
+                else if (e.Result.Text.ToLower() == "cambiar color azul")
+                {
+                    this.BackColor = Color.Blue;
+                    lblComando.Text = comando;
+                }                    
+                else if (e.Result.Text.ToLower() == "limpiar texto")
+                {
+                    lblComando.Text = string.Empty;
+                }
+                else if (e.Result.Text.ToLower() == "ocultar texto")
+                {
+                    lblComando.Visible = false;
+                }
+                else if (e.Result.Text.ToLower() == "mostrar texto")
+                {
+                    lblComando.Visible = true;
+                    lblComando.Text = comando;
+                }
+                else if (e.Result.Text.ToLower() == "ver historial de comandos")
+                {
+                    MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
+                    lblComando.Text = comando;
+                }
+                else if (comando == "abrir dictado")
+                {
+                    recognizer.RecognizeAsyncStop();
+                    escuchando = false;
+
+                    FormDictado fd = new FormDictado();
+                    fd.FormClosed += (s, args) =>
                     {
-                        this.BackColor = Color.Red;
-                        lblComando.Text = comando;
-                    }
-                    else if (e.Result.Text.ToLower() == "cambiar color azul")
-                    {
-                        this.BackColor = Color.Blue;
-                        lblComando.Text = comando;
-                    }
-                    else if (e.Result.Text.ToLower() == "limpiar texto")
-                    {
-                        lblComando.Text = string.Empty;
-                    }
-                    else if (e.Result.Text.ToLower() == "ocultar texto")
-                    {
-                        lblComando.Visible = false;
-                    }
-                    else if (e.Result.Text.ToLower() == "mostrar texto")
-                    {
-                        lblComando.Visible = true;
-                        lblComando.Text = comando;
-                    }
-                    else if (e.Result.Text.ToLower() == "ver historial de comandos")
-                    {
-                        MessageBox.Show(string.Join(Environment.NewLine, lstHistorial.Items.Cast<string>()), "Historial de Comandos");
-                        lblComando.Text = comando;
-                    }
-                    else if (e.Result.Text.ToLower() == "abrir dictado")
-                    {
-                        FormDictado fd = new FormDictado();
-                        fd.Show();
-                        lblComando.Text = comando;
-                    }
-                    else if (e.Result.Text.ToLower() == "salir")
-                    {
-                        Application.Exit();
-                    }
+                        recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                        escuchando = true;
+                        ActualizarEstado("Escuchando...");
+                    };
+
+                    fd.Show();
+                    lblComando.Text = comando;
+                }
+                else if (e.Result.Text.ToLower() == "salir")
+                {
+                    this.Close();
                 }
                 //Reiniciar activación
                 activado = false;
